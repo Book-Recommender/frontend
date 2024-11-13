@@ -81,6 +81,11 @@ body{
     font-size: 19px;
 }
 
+.google-login{
+    color: #ef758a;
+    font-size: 18px;
+}
+
 .forgot-password{
     padding-left: 10px;
     margin-top: 27px;

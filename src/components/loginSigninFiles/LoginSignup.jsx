@@ -1,10 +1,24 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './LoginSignup.css'
 import emailIcon from '../../images/email.png'
 import passwordIcon from '../../images/password.png'
 import userIcon from '../../images/person.png'
+import LoginButton from './Login'
+import {gapi} from 'gapi-script'
+
+const clientId = "955070081730-rlhmrjbj1d4pbabdsjg1b0ps3ac3st0u.apps.googleusercontent.com";
 
 const LoginSignup = () => {
+
+    useEffect(() => {
+        function start() {
+            gapi.client.init({
+                clientId: clientId,
+                scope: ""
+            })
+        };
+        gapi.load('client:auth2', start);
+    })
 
     const [action, setAction] = useState("Login");
 
@@ -36,6 +50,9 @@ const LoginSignup = () => {
                     <div className="input">
                         <img src={passwordIcon} alt=""/>
                         <input type="password" placeholder="Password"/>
+                    </div>
+                    <div className="google-login">
+                        <p>Login with Google<LoginButton /></p>
                     </div>
                 </div>
                 {action === "Sign Up" ? <div></div>
