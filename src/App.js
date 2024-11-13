@@ -1,4 +1,4 @@
-import './App.css';
+import './styles.css'
 import React from 'react';
 import LoginSignup from './components/loginSigninFiles/LoginSignup'
 
