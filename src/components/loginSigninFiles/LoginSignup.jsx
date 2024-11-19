@@ -24,13 +24,14 @@ const LoginSignup = () => {
 
 
     return(
-        <body>
+        <body class="body-login">
             <div class="left-side">
                 <h1>Book Club</h1>
                 <p>Welcome to Book Club! Book Club was created by readers, for readers, to give personalized recommendations based on readers like you.</p>
-                <p>Please make an account using our sign up on the right, and let's get started!</p>
+                <p>***TEMPORARY*** Book Club is currently in development and only supports logins through a Google account.
+                Although we have the option to sign up, please use our login through Google. Thank you!</p>
             </div>
-            <div className="container">
+            <div className="container-login">
                 <div className="header">
                     <div className="text">{action}</div>
                     <div className="underline"></div>
@@ -73,4 +74,4 @@ const LoginSignup = () => {
     )
 }
 
-export default LoginSignup
+export default LoginSignup;

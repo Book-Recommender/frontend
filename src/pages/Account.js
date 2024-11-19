@@ -1,11 +1,10 @@
 import React from 'react';
+import Profile from "../components/accountFiles/Profile";
 
 function Account() {
     return (
         <div>
-            <h2>Here is your account</h2>
-            <p>Account info
-            </p>
+            <Profile />
         </div>
     );
 }

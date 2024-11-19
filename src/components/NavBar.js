@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, useMatch, useResolvedPath} from "react-router-dom"
+import '../styles.css';
 
 export default function NavBar() {
     return (

@@ -1,4 +1,4 @@
-body{
+.body-login{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@ body{
     margin: 0;
 }
 
-.container{
+.container-login{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -84,6 +84,8 @@ body{
 .google-login{
     color: #ef758a;
     font-size: 18px;
+    margin-left: 130px;
+    padding-left: 10px;
 }
 
 .forgot-password{
@@ -91,6 +93,7 @@ body{
     margin-top: 27px;
     color: #ef758a;
     font-size: 18px;
+    margin-left: 130px;
 }
 
 .forgot-password span{
