@@ -29,9 +29,10 @@ const LoginSignup = () => {
             <div className="left-side">
                 <h1>Book Club</h1>
                 <p>Welcome to Book Club! Book Club was created by readers, for readers, to give personalized recommendations based on readers like you.</p>
-                <p>Please make an account using our sign up on the right, and let's get started!</p>
+                <p>**TEMPORARY** We are currently in development and do not support accounts just yet, please use the Google login on the right to continue!
+                Thank you for your support!</p>
             </div>
-            <div className="container">
+            <div className="container-login">
                 <div className="header">
                     <div className="text">{action}</div>
                     <div className="underline"></div>
