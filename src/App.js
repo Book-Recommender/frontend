@@ -4,7 +4,7 @@ import LoginSignup from './components/loginSigninFiles/LoginSignup'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/homepageFiles/Home";
 import Library from './pages/Library';
-import Recommendations from './pages/Recommendations';
+import {Recommendations} from './pages/Recommendations';
 import NavBar from "./components/NavBar";
 
 function App() {

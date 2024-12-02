@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Entries } from "./Entries";
 import { EditEntries } from "./EditEntries";
 import './bookEntry.css';
-import { Recommendations } from "../../pages/Recommendations";
-
 uuidv4();
 
 export const EntriesWrapper = ({userId}) => {
@@ -45,14 +43,6 @@ export const EntriesWrapper = ({userId}) => {
 
     const deleteEntry = (id) => {
         setEntries(entries.filter(entry => entry.id !== id));
-    };
-
-    const editEntry = (id) => {
-        setEntries(entries.map(entry => entry.id === id ? { ...entry, isEditing: !entry.isEditing } : entry));
-    };
-
-    const editBook = (book, id) => {
-        setEntries(entries.map(entry => entry.id === id ? { ...entry, book, isEditing: !entry.isEditing } : entry));
     };
 
     const searchBooks = () => {
@@ -104,10 +94,10 @@ export const EntriesWrapper = ({userId}) => {
                                 key={index}
                                 className="book-item"
                                 onClick={() => addBookFromSearch(book)}  // add book to list on click
-                                style={{ cursor: 'pointer' }}  // change cursor to pointer to click
+                                style={{cursor: 'pointer'}}  // change cursor to pointer to click
                             >
-                                <strong>{book.title}</strong><br />
-                                Author: {book.author}<br />
+                                <strong>{book.title}</strong><br/>
+                                Author: {book.author}<br/>
                             </div>
                         ))}
                     </div>
@@ -116,23 +106,6 @@ export const EntriesWrapper = ({userId}) => {
                 )}
             </div>
 
-            {/*Pass entries as prop to the recommendations page*/}
-            <Recommendations entries={entries} />
-
-
-
-
-            {/*This is original code in case search isnt working*/}
-            <EntriesForm addEntry={addEntry} />
-
-            {/* Displaying Entries */}
-            {entries.map((entry, index) => (
-                entry.isEditing ? (
-                    <EditEntries editEntry={editBook} book={entry} key={entry.id} />
-                ) : (
-                    <Entries book={entry} key={entry.id} deleteEntry={deleteEntry} editEntry={editEntry} />
-                )
-            ))}
         </div>
     );
 };
