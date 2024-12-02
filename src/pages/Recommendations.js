@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Recommendations() {
-    return (
-        <div>
-            <h2>Here are your recommendations!</h2>
-            <p>Based on your reading, and other users like you, we recommend...</p>
-        </div>
-    );
+const getReccs = () => {
+
+
+};
+
+export const Recommendations = ({entries}) => {
+    const [reccs, setReccs] = useState([]);
+
+    fetch(`http://127.0.0.1:8000/books/recommended`)
+        .then(response => response.json())  // Parse the JSON response
+        .then(data => {
+            setReccs(data);  // set search results
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error fetching the recommended results.');
+        });
 }
-
-export default Recommendations;

@@ -5,11 +5,18 @@ import passwordIcon from '../../images/password.png'
 import userIcon from '../../images/person.png'
 import LoginButton from './Login'
 import {gapi} from 'gapi-script'
-import { GoogleOAuthProvider } from '@react-oauth/google'
+import {Link, useMatch, useResolvedPath} from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 
 const clientId = "955070081730-rlhmrjbj1d4pbabdsjg1b0ps3ac3st0u.apps.googleusercontent.com";
 
-const LoginSignup = () => {
+const LoginSignup = ({onLogin}) => {
+    const navigate = useNavigate();
+    const handleLogin = () => {
+        onLogin();
+
+        navigate('/home');
+    };
 
     useEffect(() => {
         function start() {
@@ -22,7 +29,6 @@ const LoginSignup = () => {
     })
 
     const [action, setAction] = useState("Login");
-
 
     return(
         <body className="body-login">
@@ -54,7 +60,7 @@ const LoginSignup = () => {
                         <input type="password" placeholder="Password"/>
                     </div>
                     <div className="google-login">
-                        <p>Login with Google<LoginButton /></p>
+                        <p>Login with Google<LoginButton/></p>
                     </div>
                 </div>
                 {action === "Sign Up" ? <div></div>
@@ -69,6 +75,9 @@ const LoginSignup = () => {
                         setAction("Login")
                     }}>Login
                     </div>
+                </div>
+                <div className="forgot-password">
+                    <button onClick={handleLogin}>Demo</button>
                 </div>
             </div>
         </body>

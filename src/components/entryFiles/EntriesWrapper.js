@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { Entries } from "./Entries";
 import { EditEntries } from "./EditEntries";
 import './bookEntry.css';
+import {ReactComponent} from "*.svg";
+import Recommendations from "../../pages/Recommendations";
 
 uuidv4();
 
@@ -89,6 +91,12 @@ export const EntriesWrapper = () => {
                     searchQuery && <p>No books found for "{searchQuery}"</p>
                 )}
             </div>
+
+            {/*Pass entries as prop to the recommendations page*/}
+            <Recommendations entries={entries} />
+
+
+
 
             {/*This is original code in case search isnt working*/}
             <EntriesForm addEntry={addEntry} />

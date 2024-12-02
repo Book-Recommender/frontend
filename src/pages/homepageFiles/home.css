@@ -1,0 +1,23 @@
+
+
+.home-page {
+    background-color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.book-header {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 18pt;
+}
+
+.info {
+    margin-bottom: 100px;
+}
+
+.list-header {
+    margin-bottom: 50px;
+    text-align: left;
+    padding-left: 10px;
+}

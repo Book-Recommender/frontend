@@ -1,14 +1,14 @@
 import React from 'react';
 import {Link, useMatch, useResolvedPath} from "react-router-dom"
+import "../styles.css";
 
 export default function NavBar() {
     return (
         <nav className="nav">
-            <Link to="/" className="site-title">Book Club</Link>
             <ul>
+                <CustomLink to="/home" className="site-title">Book Club</CustomLink>
                 <CustomLink to="/library">Library</CustomLink>
                 <CustomLink to="/recommendations">Recommendations</CustomLink>
-                <CustomLink to="/account">Account</CustomLink>
             </ul>
         </nav>
     )
