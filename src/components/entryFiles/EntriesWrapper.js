@@ -4,19 +4,43 @@ import { v4 as uuidv4 } from 'uuid';
 import { Entries } from "./Entries";
 import { EditEntries } from "./EditEntries";
 import './bookEntry.css';
-import {ReactComponent} from "*.svg";
-import Recommendations from "../../pages/Recommendations";
+import { Recommendations } from "../../pages/Recommendations";
 
 uuidv4();
 
-export const EntriesWrapper = () => {
+export const EntriesWrapper = ({userId}) => {
     const [entries, setEntries] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 
-    const addEntry = (entry) => {
-        setEntries([...entries, { id: uuidv4(), book: entry, completed: false, isEditing: false }]);
-        console.log(entries);
+    const addCompletedBook = async (entry) => {
+        const response = await fetch('http://127.0.0.1:8000/books/completed', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user_id: userId, //change this later for userid to pass around
+                id: entry.book.id,
+            }),
+        });
+        if (response.ok) {
+            console.log(`Book "${entry.book.title}" is completed`);
+        } else {
+            throw new Error('Failed to mark book as completed');
+        }
+    };
+
+    const addEntry = async (entry) => {
+        const newEntry = {
+            id: uuidv4(),
+            book: entry,
+            completed: true,
+            isEditing: false
+        };
+
+        await addCompletedBook(newEntry); //send to db
+        setEntries([...entries, newEntry]); //our list on file
     };
 
     const deleteEntry = (id) => {
@@ -50,9 +74,9 @@ export const EntriesWrapper = () => {
             });
     };
 
-    const addBookFromSearch = (book) => {
+    const addBookFromSearch = async (book) => {
         // add clicked book from search
-        addEntry(book);
+        await addEntry(book);
         setSearchQuery('');  // clear search after picking result
         setSearchResults([]);  // clear search
     };
