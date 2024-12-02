@@ -10,9 +10,10 @@ export const EntriesWrapper = ({userId}) => {
     const [entries, setEntries] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const link = "http://127.0.0.1:8000";
 
     const addCompletedBook = async (entry) => {
-        const response = await fetch('http://127.0.0.1:8000/books/completed', {
+        const response = await fetch(`${link}/books/completed`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ export const EntriesWrapper = ({userId}) => {
         }
 
         // search books
-        fetch(`http://127.0.0.1:8000/books/search?query=${encodeURIComponent(searchQuery)}`)
+        fetch(`${link}/books/search?query=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json())  // Parse the JSON response
             .then(data => {
                 setSearchResults(data);  // set search results

@@ -4,13 +4,14 @@ export const Recommendations = ({userId}) => {
     const [reccs, setReccs] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const link = "http://127.0.0.1:8000";
 
     useEffect(() => {
         if (!userId) return; //need this for getting recommendations
         setLoading(true);
         setError(null);
 
-        fetch(`http://127.0.0.1:8000/books/recommended?user_id=${userId}`)
+        fetch(`${link}/books/recommended?user_id=${userId}`)
             .then(response => response.json())
             .then(data => {
                 if (data && data.length > 0) {
