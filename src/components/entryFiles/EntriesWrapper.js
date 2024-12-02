@@ -75,7 +75,7 @@ export const EntriesWrapper = ({userId}) => {
         <div className='entries-wrapper'>
             <h1>My Library</h1>
 
-            <div>
+            <div className="search-bar">
                 <input
                     type="text"
                     value={searchQuery}
@@ -85,7 +85,7 @@ export const EntriesWrapper = ({userId}) => {
                 <button onClick={searchBooks}>Search</button>
             </div>
 
-            <div id="search-results">
+            {/*<div id="search-results">
                 {searchResults.length > 0 ? (
                     <div>
                         <h2>Search Results:</h2>
@@ -98,13 +98,31 @@ export const EntriesWrapper = ({userId}) => {
                             >
                                 <strong>{book.title}</strong><br/>
                                 Author: {book.author}<br/>
+
                             </div>
                         ))}
                     </div>
                 ) : (
                     searchQuery && <p>No books found for "{searchQuery}"</p>
                 )}
+            </div>*/}
+            <div id="search-results" className="search-format">
+                <strong>Pride & Prejudice</strong><br/>
+                Author: Jane Austen<br/>
             </div>
+            <div id="search-results" className="search-format">
+                <strong>Pride & Prejudice</strong><br/>
+                Author: Jane Austen<br/>
+            </div>
+            <div id="search-results" className="search-format">
+                <strong>Pride & Prejudice</strong><br/>
+                Author: Jane Austen<br/>
+            </div>
+            <div id="search-results" className="search-format">
+                <strong>Pride & Prejudice</strong><br/>
+                Author: Jane Austen<br/>
+            </div>
+
 
         </div>
     );

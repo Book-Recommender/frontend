@@ -18,6 +18,24 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
+.search-format{
+    border: 5px solid #febdc3;
+    text-align: center;
+    margin: 0 auto 10px;
+    background: #ffffff;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: column;
+}
+
+.search-bar{
+    margin-bottom: 30px;
+}
+
+
+
+
 /* Book title in the top-left */
 .book-title {
     font-size: 18px;
