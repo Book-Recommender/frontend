@@ -15,7 +15,7 @@ const LoginSignup = ({onLogin}) => {
     const handleLogin = () => {
         onLogin();
 
-        navigate('/home');
+        navigate('/login');
     };
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const LoginSignup = ({onLogin}) => {
                         <input type="password" placeholder="Password"/>
                     </div>
                     <div className="google-login">
-                        <p>Login with Google<LoginButton/></p>
+                        <button onClick={handleLogin}>Login With Google</button>
                     </div>
                 </div>
                 {action === "Sign Up" ? <div></div>
@@ -75,9 +75,6 @@ const LoginSignup = ({onLogin}) => {
                         setAction("Login")
                     }}>Login
                     </div>
-                </div>
-                <div className="forgot-password">
-                    <button onClick={handleLogin}>Demo</button>
                 </div>
             </div>
         </body>

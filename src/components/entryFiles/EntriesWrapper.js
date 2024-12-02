@@ -85,7 +85,7 @@ export const EntriesWrapper = ({userId}) => {
                 <button onClick={searchBooks}>Search</button>
             </div>
 
-            {/*<div id="search-results">
+            <div id="search-results">
                 {searchResults.length > 0 ? (
                     <div>
                         <h2>Search Results:</h2>
@@ -96,34 +96,17 @@ export const EntriesWrapper = ({userId}) => {
                                 onClick={() => addBookFromSearch(book)}  // add book to list on click
                                 style={{cursor: 'pointer'}}  // change cursor to pointer to click
                             >
-                                <strong>{book.title}</strong><br/>
-                                Author: {book.author}<br/>
-
+                                <div className="search-format">
+                                    <strong>{book.title}</strong><br/>
+                                    Author: {book.author}<br/>
+                                </div>
                             </div>
                         ))}
                     </div>
                 ) : (
                     searchQuery && <p>No books found for "{searchQuery}"</p>
                 )}
-            </div>*/}
-            <div id="search-results" className="search-format">
-                <strong>Pride & Prejudice</strong><br/>
-                Author: Jane Austen<br/>
             </div>
-            <div id="search-results" className="search-format">
-                <strong>Pride & Prejudice</strong><br/>
-                Author: Jane Austen<br/>
-            </div>
-            <div id="search-results" className="search-format">
-                <strong>Pride & Prejudice</strong><br/>
-                Author: Jane Austen<br/>
-            </div>
-            <div id="search-results" className="search-format">
-                <strong>Pride & Prejudice</strong><br/>
-                Author: Jane Austen<br/>
-            </div>
-
-
         </div>
     );
 };
