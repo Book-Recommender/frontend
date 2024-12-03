@@ -60,7 +60,7 @@ const LoginSignup = ({onLogin}) => {
                         <input type="password" placeholder="Password"/>
                     </div>
                     <div className="google-login">
-                        <button onClick={handleLogin}>Login With Google</button>
+                        <button className="google-login-btn" onClick={handleLogin}>Login With Google</button>
                     </div>
                 </div>
                 {action === "Sign Up" ? <div></div>

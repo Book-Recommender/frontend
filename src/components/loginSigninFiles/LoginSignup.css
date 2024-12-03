@@ -89,6 +89,14 @@
     padding-right: 50px;
 }
 
+.google-login-btn {
+    color: #ef758a;
+    font-size: 18px;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 .forgot-password{
     padding-left: 10px;
     margin-top: 27px;

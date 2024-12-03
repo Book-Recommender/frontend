@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import '../components/entryFiles/bookEntry.css';
 
 export const Recommendations = ({userId}) => {
     const [reccs, setReccs] = useState([]);
@@ -39,18 +40,20 @@ export const Recommendations = ({userId}) => {
     return (
         <div>
             <h2>Recommended Books</h2>
-            {reccs.length > 0 ? (
+            {/*{reccs.length > 0 ? (
                 <ul>
                     {reccs.map((book, index) => (
                         <li key={index}>
-                            <strong>{book.title}</strong><br />
-                            Author: {book.author}
+                            <div className="search-format">
+                                <strong>{book.title}</strong><br />
+                                Author: {book.author}
+                            </div>
                         </li>
                     ))}
                 </ul>
             ) : (
                 <p>No recommendations available</p>
-            )}
+            )}*/}
         </div>
     );
 };
