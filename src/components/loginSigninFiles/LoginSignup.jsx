@@ -15,7 +15,7 @@ const LoginSignup = ({onLogin}) => {
     const handleLogin = () => {
         onLogin();
 
-        navigate('/login');
+        navigate('/home');
     };
 
     useEffect(() => {

@@ -40,7 +40,7 @@ export const Recommendations = ({userId}) => {
     return (
         <div>
             <h2>Recommended Books</h2>
-            {/*{reccs.length > 0 ? (
+            {reccs.length > 0 ? (
                 <ul>
                     {reccs.map((book, index) => (
                         <li key={index}>
@@ -53,7 +53,7 @@ export const Recommendations = ({userId}) => {
                 </ul>
             ) : (
                 <p>No recommendations available</p>
-            )}*/}
+            )}
         </div>
     );
 };
